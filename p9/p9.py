@@ -10,9 +10,9 @@ def cIsInteger(a,b):
 def checkFormula(a ,b):
     first = a*2000
     second = b*2000
-    third = a*b
+    third = 2*a*b
     sumIs = (1000**2) -first - second + third
-    print "a: %d \t b: %d " % (a, b)
+    #print "a: %d \t b: %d " % (a, b)
     if sumIs == 0:
         return True
     return False
@@ -25,4 +25,7 @@ def getPy():
                     if cIsInteger(a,b):
                         return (a ,b)
 a, b= getPy()
-print "a is %d and b is %d" % (a,b)
+#print "a is %d and b is %d" % (a,b)
+c= math.sqrt((a*a)+(b*b))
+product = c * a *b
+print "%d" % (product)
