@@ -15,10 +15,13 @@ def IsPrime(n):
     return 1
 
 N, T = 1,3
-while N < 10001:
+primeSum = 0
+while N < 1000000:
     if IsPrime(T):
         N+= 1
-    T +=2
-print T-2
+        primeSum += T
+    T += 2
+
+print "prime sum is %d" % primeSum
 print time.time() -s
 
