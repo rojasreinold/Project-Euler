@@ -1,3 +1,4 @@
+#Final version quickest version
 import numpy as np
 def largestDiagnalL2R(array, totalRows,totalCols):
     currentRowStart = 0 
@@ -5,7 +6,6 @@ def largestDiagnalL2R(array, totalRows,totalCols):
 
     largestSum = 0
     currentSum = 0
-    listString = "Numbers: "
     while currentRowStart < (totalRows-3):
         currentColStart = 0
         while currentColStart < (totalCols-3):
@@ -13,19 +13,13 @@ def largestDiagnalL2R(array, totalRows,totalCols):
             currentRow = currentRowStart
             currentSum = 1
             i = 0
-            listString = "Numbers: "
             while i <  4:
                 currentSum *= array[currentRowStart + i][currentColStart + i]
-                listString = listString + " " + str(array[currentRowStart + i][currentColStart + i])
                 i += 1
             if currentSum > largestSum:
                 largestSum = currentSum
-            #print listString
             currentColStart += 1
-
         currentRowStart += 1
-        #print currentRowStart
-        #print "starting a new row"
     return largestSum
 
 def largestDiagnalR2L(array, rows, cols):
@@ -42,14 +36,11 @@ def largestDiagnalR2L(array, rows, cols):
             currentRow = currentRowStart
             currentSum = 1
             i = 0
-            listString = "Numbers: "
             while i < 4:
-                listString = listString + " " + str(array[currentRowStart + i][currentColStart - i])
                 currentSum *=array[currentRowStart +i ][currentColStart -i]
                 i +=1
             if currentSum > largestSum:
                 largestSum = currentSum
-            print listString
 
             currentColStart -= 1
         currentRowStart += 1
@@ -58,20 +49,17 @@ def largestDiagnalR2L(array, rows, cols):
 def largestDown(array,rows, cols):
     largestSum = 0
     currentSum = 0
-    listString = "Numbers: "
     for i in range(cols):
         for c in range(rows-4):
-            listString = "Numbers: "
             currentSum = 1
             for n in range(c,c+4):
                 currentSum *= array[n][i]
-                listString = listString + " " + str(array[n][i])
             if currentSum > largestSum:
                 largestSum = currentSum
-            #print listString
     return largestSum
 
 def largestLeft(array,rows, cols):
+    #finds largest 4 group horizontally
     largestSum = 0
     currentSum = 0
     for i in range(rows):
@@ -84,7 +72,7 @@ def largestLeft(array,rows, cols):
     return largestSum
 
 def printArray(array):
-    #print the array. Used for debugging
+    #prints the 2dArray
     for i in range(size):
         for j in range(size):
             print '{:20}'.format(array[i][j]),
@@ -92,6 +80,7 @@ def printArray(array):
 
 
 with open('input.txt' ) as f:
+    #open the file and add the lines into an array
     array = []
     for line in f:
         array.append(line)
