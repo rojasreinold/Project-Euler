@@ -1,5 +1,5 @@
 import math
-
+from time import clock
 def listOfPrimes(size):
     #Finds a list of primes
     listPrimes = [2]
@@ -34,7 +34,7 @@ def DivByTotal(num, primes):
             return totalDiv
         else:
             i += 1
-
+startTime = clock()
 triNumber = 1
 i = 2
 numDiv = 0
@@ -47,3 +47,4 @@ while numDiv < 500:
     numDiv = DivByTotal(triNumber, listPrimes)
     i += 1
 print triNumber
+print "Elapsed time was" , clock()-startTime
