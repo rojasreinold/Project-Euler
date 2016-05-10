@@ -1,6 +1,8 @@
 class Pyramid:
-    __init__():
-       rows = 0
+    __init__(self, firstBlock):
+        top = Row(firstBlock)
+        bottom = top
+        rows = 1
     
     def addRow(self):
         rows += 1
@@ -9,12 +11,18 @@ class Pyramid:
 class Row:
     blocks = []
     __init__(self, r):
-
-    def blockis(self, v):
-        blocks.append(Block, v)
+        blocks.append(r)
     def nextRow(self, r):
         nextRow = r
          
-class Block:
-    __init__(self,  v):
-        value = v
+
+
+with open("input.txt") as f:
+    array = []
+    for line in f:
+        array.append(line)
+    
+
+for i in range(len(array)):
+    
+
